@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8fafc;
+    
+    
+}
+
+.header{
+    position: fixed;
+    background-color: #121b2f;
+    color: white;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.header .header-container{
+    padding: 2.5rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.header .header-container .name-role{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.header .header-container .name-role .name{
+    font-size: 3rem;
+    font-weight: 400;
+}
+.header .header-container .name-role .role{
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #cad5e2;
+}
+.header .header-container .nav-list{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 2rem;
+    font-size: 1.7rem;
+}
+.header .header-container .nav-list a{
+    text-decoration: none;
+    color: white;
+}
+.main{
+    margin-top: 11.5rem;
+    display: flex;
+    /* position: sticky; */
+    overflow: hidden;
+    height: calc(100vh - 11.5rem);
+
+}
+.side{
+    width: 25%;
+    background-color: #1d293c;
+    color: white;
+    overflow-y: auto;
+}
+.side-container{
+    margin:2.5rem  ;
+}
+.side .side-container .profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile .profile-icon{
+    background-color: #314157;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.profile .profile-icon .profile-pic{
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;   
+}
+.profile .name ,
+.profile .profession{
+    font-weight: 200;
+    font-size: 1.8rem;
+}
+.profile .profession{
+    color: #90a1b9;
+}
+.side .quick-info{
+    background-color: #314157;
+    margin: 2rem 0;  
+    border-radius: 10px;
+}
+.side .quick-info .quick-info-container{
+    padding: 2rem;
+}
+.quick-info-container h2{
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.quick-info-container ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.5rem;
+    color: #cad5e2;
+    margin-left: 2rem;
+}
+.side .side-links{
+ margin: 1rem 2rem;
+}
+.side-links ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    font-size: 1.8rem;
+}
+.side-links ul a{
+    text-decoration: none;
+    color: white;
+}
+.side-container .side-links ul li{
+    padding: 0.8rem;
+}
+.side-container .side-links ul li:hover{
+    background-color: #314157;
+    border-radius: 10px;
+}
+.main .right-side{
+    width: 75%;
+    color: oklch(.372 .044 257.287);
+    overflow-y: auto;
+    flex: 1;
+}
+.right-side-container{
+    max-width: 80%;
+    margin:4rem auto;
+}
+.right-side .about-me,
+.right-side .experience,
+.right-side .education,
+.right-side .projects,
+.right-side .certifications{
+    margin-bottom: 5rem;
+}
+.right-side .about-me .about-me-title,
+.right-side .experience .experience-title,
+.right-side .education .education-title,
+.right-side .projects .project-title,
+.certifications-title{
+    font-weight: 400;
+    color: oklch(0.21 0.04 266.37);
+    font-size: 1.8rem;
+}
+.right-side hr{
+    margin: 2.2rem 0;
+    border: 0.1rem solid #cad5e2;
+}
+.right-side .about-me-detail,
+.right-side .experience .experience-detail,
+.right-side .education .education-detail{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px #cad5e2;
+}
+.right-side .experience .experience-role-duration{
+    display: flex;
+    justify-content: space-between;
+}
+.experience-role-duration h2:nth-child(1){
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: oklch(0.21 0.04 266.37);;
+}
+.experience-role-duration h2:nth-child(2){
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+.experience .company{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.experience .experience-detail .tasks{
+    margin: 3rem 0 3rem 3rem;
+}
+.experience .experience-detail li::marker {
+  font-size: 2rem; /* size of bullet */
+  color: #333;
+}
+.experience .experience-detailt .tasks li {
+  padding-left: 0.8rem;
+}
+.experience .experience-detail .skills{
+ 
+}
+.experience .skills ul{
+    list-style: none;
+    display: flex;
+    gap:1.5rem;
+    flex-wrap: wrap;  
+}
+.experience .skills ul li{
+    padding: 0.4rem 1rem;
+    background-color: oklch(.95 .0058 264.53);
+    border-radius: 1rem;
+    color: #030213;
+}
+.right-side .education .education-degree-duration{
+    display: flex;
+    justify-content: space-between;
+}
+.education-degree-duration h2:nth-child(1){
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: oklch(0.21 0.04 266.37);;
+}
+.education-degree-duration h2:nth-child(2){
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+.education .institution{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.education .education-detail .focus,
+.education .education-detail .gpa{
+    margin-top: 2rem;
+    
+}
+.projects .project-cards,
+.certifications .certification-cards{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:4rem;
+    
+}
+.projects .project-cards .project-card,
+.certifications .certification-cards .certification-card{
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px #cad5e2;
+    text-wrap: inherit;
+}
+.projects .project-cards .project-card p{
+    margin: 2.5rem 0;
+}
+.projects .project-cards .project-card ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 1rem;
+    margin: 3rem 0;
+}
+.projects .project-cards .project-card ul li{
+    padding: 0.4rem 1rem;
+    color: oklch(.95 .0058 264.53);
+    border-radius: 1rem;
+    background-color: #030213;
+}
+.projects .project-cards .project-card .view-project{
+    text-decoration: none;
+    margin-top: 2rem;
+}
+.projects .project-cards .project-card .view-project i{
+    margin-left: 1rem;
+}
+.certifications .certification-cards .certification-card .certification-title{
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+.certifications .certification-cards .certification-card p{
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    color: oklch(.446 .043 257.281);
+}
+footer{
+    padding: 2.5rem 10rem;
+    width: 100%;
+    background-color: oklch(.208 .042 265.755);
+    color: white;
+    
+}
+footer .name{
+font-weight: 400;
+margin-bottom: 2rem;
+}
+footer .description{
+    font-weight: 300;
+    max-width: 60rem;
+    color: oklch(.704 .04 256.788);
+    
+}
