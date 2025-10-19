@@ -128,7 +128,7 @@ body{
     display: flex;
     flex-direction: column;
     gap:1rem;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 }
 .side-links ul a{
     text-decoration: none;
@@ -142,7 +142,6 @@ body{
     border-radius: 10px;
 }
 .main .right-side{
-    width: 75%;
     color: oklch(.372 .044 257.287);
     overflow-y: auto;
     flex: 1;
@@ -232,11 +231,15 @@ body{
 .education-degree-duration h2:nth-child(1){
     font-weight: 500;
     font-size: 1.8rem;
-    color: oklch(0.21 0.04 266.37);;
+    color: oklch(0.21 0.04 266.37);
+    
 }
 .education-degree-duration h2:nth-child(2){
     font-weight: 300;
     font-size: 1.8rem;
+    width: 20%;
+    display: flex;
+    justify-content: end;
 }
 .education .institution{
     font-size: 1.8rem;
@@ -299,10 +302,8 @@ body{
 }
 footer{
     padding: 2.5rem 10rem;
-    width: 100%;
     background-color: oklch(.208 .042 265.755);
-    color: white;
-    
+    color: white; 
 }
 footer .name{
 font-weight: 400;
@@ -311,6 +312,248 @@ margin-bottom: 2rem;
 footer .description{
     font-weight: 300;
     max-width: 60rem;
-    color: oklch(.704 .04 256.788);
+    color: oklch(.704 .04 256.788);  
+}
+/* LG - SMALL LAPTOPS: 1024-1280 */
+@media (max-width: 72rem) {
+/* 1150px / 16px = 72rem */
+/* 72rem * 16px = 1152px */
+html{
+    /* 9px / 16px =56.25% */
+    font-size: 56.25%;
+}
+.header .header-container .name-role{
+    gap: 0.5rem;
+}
+.header .header-container{
+    padding: 2rem 8rem;
+}
+.main{
+    margin-top: 10rem;
+}
+.side-container{
+    margin:2rem  ;
+}
+.side .quick-info .quick-info-container{
+    padding: 1rem;
+}
+.right-side-container{
+    max-width: 85%;
+    margin:3rem auto;
+}
+
+.projects .project-cards,
+.certifications .certification-cards{
+    gap:3rem;
     
+}
+.right-side .about-me-detail,
+.right-side .experience .experience-detail,
+.right-side .education .education-detail{
+    padding: 3rem;
+}
+.projects .project-cards .project-card,
+.certifications .certification-cards .certification-card{
+    padding: 3rem;
+}
+.projects .project-cards .project-card,
+.certifications .certification-cards .certification-card{
+    padding: 2.5rem
+}
+.certifications .certification-cards .certification-card .certification-title,
+.certifications .certification-cards .certification-card p{
+    margin-bottom: 1rem;
+
+}
+footer{
+    padding: 2rem 8rem; 
+}
+}
+
+/* MD - TABLETS: 768 - 1024 */
+
+@media (max-width: 57rem) {
+/* 912px / 16px = 57rem */
+/* 57rem * 16px = 912px */
+html{
+    /* 8px / 16px =50% */
+    font-size: 50%;
+}
+.header .header-container .name-role{
+    gap: 0.4rem;
+}
+.header .header-container{
+    padding: 1.8rem 7rem;
+}
+.main{
+    margin-top: 9.5rem;
+}
+.side-container{
+    margin:1.5rem  ;
+}
+.right-side-container{
+    max-width: 88%;
+    margin:2.8rem auto;
+}
+
+.projects .project-cards,
+.certifications .certification-cards{
+    gap:2.5rem;
+    
+}
+.right-side .about-me-detail,
+.right-side .experience .experience-detail,
+.right-side .education .education-detail{
+    padding: 2.5rem;
+}
+.projects .project-cards .project-card,
+.certifications .certification-cards .certification-card{
+    padding: 2rem;
+}
+
+.certifications .certification-cards .certification-card .certification-title,
+.certifications .certification-cards .certification-card p{
+    margin-bottom: 0.7rem;
+
+}
+footer{
+    padding: 1.8rem 7rem; 
+}
+}
+
+/* MD - TABLETS: 768 - 1024 */
+
+@media (max-width: 57rem) {
+/* 912px / 16px = 57rem */
+/* 57rem * 16px = 912px */
+html{
+    /* 8px / 16px =50% */
+    font-size: 50%;
+}
+.header .header-container .name-role{
+    gap: 0.4rem;
+}
+.header .header-container{
+    padding: 1.8rem 7rem;
+}
+.main{
+    margin-top: 9.5rem;
+}
+.side{
+    width: 28%;
+}
+.side-container{
+    margin:1.2rem  ;
+}
+.right-side-container{
+    max-width: 88%;
+    margin:2.8rem auto;
+}
+
+.projects .project-cards,
+.certifications .certification-cards{
+    gap:2.5rem;
+    
+}
+.right-side .about-me-detail,
+.right-side .experience .experience-detail,
+.right-side .education .education-detail{
+    padding: 2.5rem;
+}
+.projects .project-cards .project-card,
+.certifications .certification-cards .certification-card{
+    padding: 2rem;
+}
+
+.certifications .certification-cards .certification-card .certification-title,
+.certifications .certification-cards .certification-card p{
+    margin-bottom: 0.7rem;
+
+}
+footer{
+    padding: 1.8rem 7rem; 
+}
+}
+
+
+/* SM - PHONE LANDSCAPE: 576 PX  - 768PX */
+
+@media (max-width: 42rem) {
+/* 672px / 16px = 42rem */
+/* 42rem * 16px = 672px */
+html{
+    /* 7px / 16px =43.75% */
+    font-size: 43.75%;
+}
+.header .header-container .name-role{
+    gap: 0.4rem;
+}
+.header .header-container{
+    padding: 1.6rem 6rem;
+}
+.main{
+    margin-top: 9rem;
+}
+
+
+.projects .project-cards,
+.certifications .certification-cards{
+    gap:2.5rem;
+    grid-template-columns:  1fr;
+    
+}
+footer{
+    padding: 1.8rem 7rem; 
+}
+}
+
+/* XS - PHONE PORTRAINT:< 576 */
+@media (max-width: 42rem) {
+/* 672px / 16px = 42rem */
+/* 42rem * 16px = 672px */
+html{
+    /* 7px / 16px =43.75% */
+    font-size: 43.75%;
+}
+.header .header-container .name-role{
+    gap: 0.4rem;
+}
+.header .header-container{
+    padding: 1.6rem 6rem;
+}
+.main{
+    margin-top: 9rem;
+}
+.side-container{
+    margin:1.5rem  ;
+}
+.right-side-container{
+    max-width: 88%;
+    margin:2.8rem auto;
+}
+
+.projects .project-cards,
+.certifications .certification-cards{
+    gap:2.5rem;
+    grid-template-columns:  1fr;
+    
+}
+.right-side .about-me-detail,
+.right-side .experience .experience-detail,
+.right-side .education .education-detail{
+    padding: 2.5rem;
+}
+.projects .project-cards .project-card,
+.certifications .certification-cards .certification-card{
+    padding: 2rem;
+}
+
+.certifications .certification-cards .certification-card .certification-title,
+.certifications .certification-cards .certification-card p{
+    margin-bottom: 0.7rem;
+
+}
+footer{
+    padding: 1.8rem 7rem; 
+}
 }
