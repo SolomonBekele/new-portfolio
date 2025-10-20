@@ -71,6 +71,15 @@ body{
 .side-container{
     margin:2.5rem  ;
 }
+.side .side-container .menu-icon {
+  position: absolute;
+  display: none;
+  color: white;
+  right: 2rem;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 3;
+}
 .side .side-container .profile{
     display: flex;
     flex-direction: column;
@@ -329,7 +338,7 @@ html{
     padding: 2rem 8rem;
 }
 .main{
-    margin-top: 10rem;
+    margin-top: 10.2rem;
 }
 .side-container{
     margin:2rem  ;
@@ -370,56 +379,6 @@ footer{
 }
 }
 
-/* MD - TABLETS: 768 - 1024 */
-
-@media (max-width: 57rem) {
-/* 912px / 16px = 57rem */
-/* 57rem * 16px = 912px */
-html{
-    /* 8px / 16px =50% */
-    font-size: 50%;
-}
-.header .header-container .name-role{
-    gap: 0.4rem;
-}
-.header .header-container{
-    padding: 1.8rem 7rem;
-}
-.main{
-    margin-top: 9.5rem;
-}
-.side-container{
-    margin:1.5rem  ;
-}
-.right-side-container{
-    max-width: 88%;
-    margin:2.8rem auto;
-}
-
-.projects .project-cards,
-.certifications .certification-cards{
-    gap:2.5rem;
-    
-}
-.right-side .about-me-detail,
-.right-side .experience .experience-detail,
-.right-side .education .education-detail{
-    padding: 2.5rem;
-}
-.projects .project-cards .project-card,
-.certifications .certification-cards .certification-card{
-    padding: 2rem;
-}
-
-.certifications .certification-cards .certification-card .certification-title,
-.certifications .certification-cards .certification-card p{
-    margin-bottom: 0.7rem;
-
-}
-footer{
-    padding: 1.8rem 7rem; 
-}
-}
 
 /* MD - TABLETS: 768 - 1024 */
 
@@ -437,7 +396,7 @@ html{
     padding: 1.8rem 7rem;
 }
 .main{
-    margin-top: 9.5rem;
+    margin-top: 9.4rem;
 }
 .side{
     width: 28%;
@@ -494,6 +453,9 @@ html{
 .main{
     margin-top: 9rem;
 }
+.side{
+    width: 30%;
+}
 
 
 .projects .project-cards,
@@ -508,40 +470,83 @@ footer{
 }
 
 /* XS - PHONE PORTRAINT:< 576 */
-@media (max-width: 42rem) {
-/* 672px / 16px = 42rem */
-/* 42rem * 16px = 672px */
+@media (max-width: 35rem) {
+/* 560px / 16px = 42rem */
+/* 35rem * 16px = 560px */
 html{
-    /* 7px / 16px =43.75% */
-    font-size: 43.75%;
+    /* 6px / 16px =43.75% */
+    font-size: 37.5%;
 }
-.header .header-container .name-role{
-    gap: 0.4rem;
+.header {
+   display: none;
+   background: transparent;
+   position: absolute;
+   top: 5rem;
+   right: 2rem;
 }
-.header .header-container{
-    padding: 1.6rem 6rem;
+.header .header-container .name-role {
+    display: none;
 }
 .main{
-    margin-top: 9rem;
+    margin-top: 0rem;
+    flex-direction: column;
+    height: auto;
+}
+.side{
+    width: 100%;
+
 }
 .side-container{
-    margin:1.5rem  ;
+    margin:1.4rem  ;
+}
+.side .side-container .menu-icon {
+    display: block; 
+  }
+
+.side .quick-info .quick-info-container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+}
+.header.active {
+    display: flex;
+    justify-content: flex-end; 
+ }
+.header .header-container .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+  }
+.quick-info-container ul {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+.side .side-links{
+    display: none;
 }
 .right-side-container{
-    max-width: 88%;
-    margin:2.8rem auto;
+    /* max-width: 85%; */
+    margin:2rem auto;
+    overflow-y:hidden;
+    /* flex: 1; */
 }
+
 
 .projects .project-cards,
 .certifications .certification-cards{
-    gap:2.5rem;
+    gap:2.3rem;
     grid-template-columns:  1fr;
     
 }
 .right-side .about-me-detail,
 .right-side .experience .experience-detail,
 .right-side .education .education-detail{
-    padding: 2.5rem;
+    padding: 2rem;
 }
 .projects .project-cards .project-card,
 .certifications .certification-cards .certification-card{
