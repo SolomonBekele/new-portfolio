@@ -28,7 +28,7 @@
     </header>
     <main class="main">
         <aside class="side">
-            
+
             <div class="side-container">
                 <div class="menu-icon">&#9776;</div>
                 <div class="profile">
@@ -52,25 +52,19 @@
                 <div class="side-links">
                     <ul class="link-list">
                         <li class="">
-                            <div class="link-item"><a href="">About Me</a></div>
+                            <div class="link-item"><a href="#about-me">About Me</a></div>
                         </li>
-                        <li class="">
-                            <div class="link-item"><a href="">Experience</a></div>
+                        <li class="link-item" id="#experience">
+                            <div class="link-item"><a href="#experience">Experience</a></div>
                         </li>
-                        <li class="">
-                            <div class="link-item"><a href="">Education</a></div>
+                        <li class="link-item">
+                            <div class="link-item"><a href="#education">Education</a></div>
                         </li>
-                        <li class="">
-                            <div class="link-item"><a href="">Skills</a></div>
+                        <li class="link-item">
+                            <div class="link-item"><a href="#projects">Projects</a></div>
                         </li>
-                        <li class="">
-                            <div class="link-item"><a href="">Projects</a></div>
-                        </li>
-                        <li class="">
-                            <div class="link-item"><a href="">Certifications</a></div>
-                        </li>
-                        <li class="">
-                            <div class="link-item"><a href="">Contacts</a></div>
+                        <li class="link-item">
+                            <div class="link-item"><a href="#certifications">Certifications</a></div>
                         </li>
                     </ul>
                 </div>
@@ -79,7 +73,7 @@
         </aside>
         <section class="right-side">
             <div class="container right-side-container">
-                <div class="about-me">
+                <div class="about-me" id="about-me">
                     <div class="container about-me-container">
                         <h2 class="about-me-title">About Me</h2>
                         <hr>
@@ -95,7 +89,22 @@
 
                     </div>
                 </div>
-                <div class="experience">
+                <div class="intro-video" id="intro-video">
+                    <div class="container intro-video-container">
+                        <h2 class="intro-video-title">Introduction video</h2>
+                        <div class="intro-video-detail">
+                            <div class="upload-video-container-before" id="uploadVideoContainer">
+                                <h3 class="upload-video-text">Upload a short introduction video</h3>
+                                <h3 class="video-format">MP4, WebM, or OGG format</h3>
+                                <button class="choose-video-button" id="chooseVideoButton">Choose video File</button>
+                                <input type="file" id="videoInput" accept="video/mp4,video/webm,video/ogg"
+                                    style="display: none;">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="experience" id="experience">
                     <div class="container expreience-container">
                         <h2 class="experience-title">Work Experience</h2>
                         <hr>
@@ -136,7 +145,7 @@
 
                     </div>
                 </div>
-                <div class="education">
+                <div class="education" id="education">
                     <div class="container education-container">
                         <h2 class="education-title">Education</h2>
                         <hr>
@@ -151,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="projects">
+                <div class="projects" id="projects">
                     <div class="container project-container">
                         <h2 class="project-title">Featured Projects</h2>
                         <hr>
@@ -172,7 +181,8 @@
                                         <!-- <li class="dev-tech-item">Redis</li> -->
                                     </ul>
                                 </div>
-                                <a class="view-project" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                                <a class="view-project" href="#">View Project <i
+                                        class="fa-solid fa-arrow-right"></i></a>
                             </div>
 
                             <!-- Project 2 -->
@@ -190,7 +200,8 @@
                                         <li class="dev-tech-item">Docker</li>
                                     </ul>
                                 </div>
-                                <a class="view-project" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                                <a class="view-project" href="#">View Project <i
+                                        class="fa-solid fa-arrow-right"></i></a>
                             </div>
 
                             <!-- Project 3 -->
@@ -208,7 +219,8 @@
                                         <li class="dev-tech-item">Docker</li>
                                     </ul>
                                 </div>
-                                <a class="view-project" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                                <a class="view-project" href="#">View Project <i
+                                        class="fa-solid fa-arrow-right"></i></a>
                             </div>
 
                             <!-- Project 4 -->
@@ -224,7 +236,8 @@
                                         <li class="dev-tech-item">Machine Learning</li>
                                     </ul>
                                 </div>
-                                <a class="view-project" href="#">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                                <a class="view-project" href="#">View Project <i
+                                        class="fa-solid fa-arrow-right"></i></a>
                             </div>
 
                         </div>
@@ -233,7 +246,7 @@
 
 
                 </div>
-                <div class="certifications">
+                <div class="certifications" id="certifications">
                     <div class="container certifications-container">
                         <h2 class="certifications-title">Certifications & Awards</h2>
                         <hr>
@@ -242,25 +255,62 @@
                             <!-- certificate 1 -->
                             <div class="certification-card">
                                 <h2 class="certification-title">AWS Certified Solutions Architect</h2>
-                                <p>Amazon Web Services - 2023</div>
+                                <p>Amazon Web Services - 2023
+                                <div class="edit-icon-container">
+                                    <img src="images/icons8-edit-pencil.svg" alt="edit" class="edit-icon">
+                                </div>
+                            </div>
 
                             <!-- certification 2 -->
                             <div class="certification-card">
                                 <h2 class="certification-title">Google Cloud Professional Developer</h2>
-                                <p>Google Cloud - 2022</div>
+                                <p>Google Cloud - 2022</p>
+                                <div class="edit-icon-container">
+                                    <img src="images/icons8-edit-pencil.svg" alt="edit" class="edit-icon">
+                                </div>
+                            </div>
 
                             <!-- certification 3 -->
                             <div class="certification-card">
                                 <h2 class="certification-title">Certified Kubernetes Administrator</h2>
                                 <p>CNCF - 2023</p>
-                                 </div>
+                                <div class="edit-icon-container">
+                                    <img src="images/icons8-edit-pencil.svg" alt="edit" class="edit-icon">
+                                </div>
+
+                            </div>
 
                             <!-- certification 4 -->
                             <div class="certification-card">
                                 <h2 class="certification-title">Employee of the Year</h2>
-                                <p>Tech Innovations Inc. - 2022</div>
+                                <p>Tech Innovations Inc. - 2022</p>
+                                <div class="edit-icon-container">
+                                    <img src="images/icons8-edit-pencil.svg" alt="edit" class="edit-icon">
+                                </div>
+                            </div>
+                            
 
                         </div>
+                        <!-- Modal -->
+                            <div class="modal" id="editModal">
+                                <div class="modal-content">
+                                    <h2>Edit Certification</h2>
+                                    <form id="editForm">
+                                        <label for="title">Title</label>
+                                        <div class="input-wrapper">
+                                        <input type="text" id="title" name="title" class="modal-input" required>
+                                        </div>
+                                        <label for="organization">Organization</label>
+                                        <div class="input-wrapper">
+                                        <input type="text" id="organization" class="modal-input" name="organization" required>
+</div>
+                                        <div class="modal-buttons">
+                                            <button type="button" id="cancelBtn">Cancel</button>
+                                            <button type="submit" id="saveBtn">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
 
                     </div>
 

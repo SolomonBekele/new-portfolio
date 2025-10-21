@@ -122,7 +122,7 @@ body{
     margin-bottom: 2rem;
 }
 .quick-info-container ul{
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: 1rem;
     font-size: 1.5rem;
@@ -134,9 +134,8 @@ body{
 }
 .side-links ul{
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
+    display: grid;
+    row-gap: 1.5rem;
     font-size: 1.7rem;
 }
 .side-links ul a{
@@ -167,6 +166,7 @@ body{
     margin-bottom: 5rem;
 }
 .right-side .about-me .about-me-title,
+.right-side .intro-video .intro-video-title,
 .right-side .experience .experience-title,
 .right-side .education .education-title,
 .right-side .projects .project-title,
@@ -180,6 +180,7 @@ body{
     border: 0.1rem solid #cad5e2;
 }
 .right-side .about-me-detail,
+.right-side .intro-video-detail,
 .right-side .experience .experience-detail,
 .right-side .education .education-detail{
     display: flex;
@@ -189,8 +190,74 @@ body{
     background-color: white;
     padding: 4rem;
     border-radius: 1rem;
-    box-shadow: 0px 0px 10px 0px #cad5e2;
+    /* box-shadow: 0px 0px 10px 0px #cad5e2; */
+    border: 0.01rem solid oklch(0.93 0 0);
+    margin: 2.3rem 0;
 }
+.right-side .intro-video-detail .upload-video-container-before{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    background-color: #f8fafc;
+    border-radius: 1rem;
+    border:0.2rem dashed #cad5e2;;
+    gap: 2rem;
+}
+.right-side .intro-video-detail .upload-video-container-after{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.right-side .upload-video-container-before .upload-video-text{
+    font-weight: 400;
+}
+.right-side .upload-video-container-before .video-format{
+    font-weight: 400;
+
+    color: oklch(.554 .046 257.417);
+}
+.right-side .intro-video-detail .choose-video-button{
+    font-weight: 400;
+    color: white;
+    background-color: #030213;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+ .uploaded-video {
+    width: 100%;
+    max-height: 50rem;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 1rem;
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.25); */
+    outline: none;
+  }
+.right-side .upload-video-container-after .file_name-remove_button{
+    display: flex;
+    justify-content: space-between;
+}
+.right-side .upload-video-container-after .file_name-remove_button button{
+    background-color: transparent;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid #e8e8e8;
+    font-size: 1.2rem;
+}
+.right-side .upload-video-container-after .replace-video-button{
+    display: flex;
+    width:fit-content;
+    background-color: transparent;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid #e8e8e8;
+    font-size: 1.2rem;
+}
+
+
 .right-side .experience .experience-role-duration{
     display: flex;
     justify-content: space-between;
@@ -268,13 +335,138 @@ body{
 }
 .projects .project-cards .project-card,
 .certifications .certification-cards .certification-card{
+    position: relative;
     font-size: 1.5rem;
     background-color: white;
     padding: 4rem;
     border-radius: 1rem;
-    box-shadow: 0px 0px 10px 0px #cad5e2;
+    /* box-shadow: 0px 0px 10px 0px #cad5e2; */
+    border: 0.01rem solid oklch(0.93 0 0);
     text-wrap: inherit;
 }
+.certification-card:hover{
+     box-shadow: 0px 0px 10px 0px #cad5e2;
+}
+.certifications .certification-cards .certification-card .edit-icon-container{
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    opacity: 0;             /* Hidden by default */
+    pointer-events: none;   /* Avoid capturing clicks when hidden */
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 1.3rem;
+    
+}
+.certifications .certification-cards .certification-card .edit-icon{
+    width: 1.6rem;
+    height: 1.6rem;
+    opacity: 0;             /* Hidden by default */
+    pointer-events: none;   /* Avoid capturing clicks when hidden */
+    transition: opacity 0.3s;
+    
+}
+.certifications .certification-cards .certification-card:hover .edit-icon-container{
+   /* background-color: oklch(0.93 0 0); */
+    opacity: 1;
+}
+.certifications .certification-cards .certification-card:hover .edit-icon {
+    opacity: 1;
+    pointer-events: auto;
+    
+}
+.certifications .certification-cards .certification-card:hover .edit-icon-container:hover{
+   
+   background-color: oklch(0.93 0 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+.certifications  .modal {
+  display: none; 
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  color: oklch(.145 0 0);
+}
+.certifications  .modal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+.certifications  .modal .modal-content h2 {
+  margin-bottom: 1rem;
+  
+}
+.certifications  .modal .modal-content .input-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem;
+}
+
+.certifications  .modal .modal-content input{
+  width: 100%;
+  margin: 0.3rem;
+  border: none;
+  padding:1rem;
+}
+.certifications  .modal .modal-content .input-wrapper:has(input:focus) {
+  background-color: #8c8c8c; 
+  border-radius: 5px;      /* change background outside border */
+}
+
+.certifications  .modal .modal-content input:focus {
+  width: 100%;
+  margin: 0.3rem;
+  /* background-color: #ffffff; */
+  border-radius: 5px;
+  border: none
+
+}
+
+.certifications  .modal .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.certifications  .modal .modal-buttons button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.certifications  .modal #cancelBtn {
+  background: #ccc;
+}
+
+.certifications  .modal #saveBtn {
+  background: #007bff;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .projects .project-cards .project-card p{
     margin: 2.5rem 0;
 }
@@ -294,6 +486,7 @@ body{
 .projects .project-cards .project-card .view-project{
     text-decoration: none;
     margin-top: 2rem;
+    color: oklch(.546 .245 262.881)
 }
 .projects .project-cards .project-card .view-project i{
     margin-left: 1rem;
@@ -338,7 +531,7 @@ html{
     padding: 2rem 8rem;
 }
 .main{
-    margin-top: 10.2rem;
+    margin-top: 10.1rem;
 }
 .side-container{
     margin:2rem  ;
@@ -452,11 +645,8 @@ html{
 }
 .main{
     margin-top: 9rem;
+    
 }
-.side{
-    width: 30%;
-}
-
 
 .projects .project-cards,
 .certifications .certification-cards{
@@ -507,7 +697,9 @@ html{
    display: flex;
    flex-direction: column;
    align-items: center;
-
+}
+.side .side-container .link-list{
+    grid-template-columns: repeat(2,1fr);
 }
 .header.active {
     display: flex;
@@ -526,9 +718,9 @@ html{
     align-items: center;
     list-style: none;
 }
-.side .side-links{
+/* .side .side-links{
     display: none;
-}
+} */
 .right-side-container{
     /* max-width: 85%; */
     margin:2rem auto;
