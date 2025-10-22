@@ -106,28 +106,93 @@ videoInput.addEventListener('change', (e) => {
   handleFileSelection(e.target.files[0]);
 });
 
+// Function that handles certificate toggling for a given card
+function toggleCertificate(card,event) {
+    const content = card.querySelector('.certificate-content');
+    const iframeWrapper = card.querySelector('.iframeWrapper');
+    const iframeFallback = card.querySelector('.iframeFallback');
+    const text = card.querySelector('.certificateText');
+    const chevron = card.querySelector('.chevron');
+    const url = card.querySelector('.openLink').href;
 
-// _____________ add a edit modal
+    const isHidden = content.style.display === 'none' || content.style.display === '' 
+    
+    if (isHidden && event) {
+        // Clear and reload iframe
+        iframeWrapper.innerHTML = '';
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.width = '100%';
+        iframe.height = '400';
+        iframe.style.border = '1px solid #ddd';
+
+        try {
+            iframeWrapper.appendChild(iframe);
+        } catch (e) {
+            iframeWrapper.innerHTML = '';
+            iframeFallback.style.display = 'block';
+            iframeFallback.querySelector('.openLink').href = url;
+        }
+
+        // Handle timeout fallback
+        let loaded = false;
+        iframe.onload = () => { loaded = true; };
+        setTimeout(() => {
+            if (!loaded) {
+                iframeWrapper.style.display = "none";
+                iframeFallback.style.display = "block";
+            }
+        }, 2000);
+
+        // Update UI
+        content.style.display = 'block';
+        text.textContent = 'Hide Certification';
+        chevron.style.transform = 'rotate(180deg)';
+    } else {
+        // Hide content
+        content.style.display = 'none';
+        text.textContent = 'View Certification';
+        chevron.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Add event listeners to all buttons
+document.querySelectorAll('.toggleCertificateBtn').forEach(button => {
+    button.addEventListener('click', () => {
+        const card = button.closest('.certification-card');
+        toggleCertificate(card,true);
+    });
+});
+
+
+
+
+// _____________------------ add a edit modal-----------
 
 const editIcons = document.querySelectorAll('.edit-icon');
 const modal = document.getElementById('editModal');
 const cancelBtn = document.getElementById('cancelBtn');
+const closeModalIcon = document.getElementById('closeModalIcon');
 const editForm = document.getElementById('editForm');
 let currentCard = null;
 
-// When edit icon is clicked
+clickedToggleCard= null
 editIcons.forEach(icon => {
   icon.addEventListener('click', (e) => {
     const card = e.target.closest('.certification-card');
     const title = card.querySelector('.certification-title').textContent;
-    const organization = card.querySelector('p').textContent;
+    const organization = card.querySelector('.certificate-organization').textContent;
+    const year = card.querySelector('.certificate-year').textContent;
+    const url = document.querySelector('.openLink').href;
 
     document.getElementById('title').value = title;
     document.getElementById('organization').value = organization;
+    document.getElementById('year').value=year;
+    document.getElementById('certification-url').value= url;
     
     currentCard = card;
     modal.style.display = 'flex';
-
+     
     // 🔥 Automatically focus on title input
     const titleInput = document.getElementById('title');
     setTimeout(() => titleInput.focus(), 100); // small delay for smooth render
@@ -139,19 +204,29 @@ editIcons.forEach(icon => {
 cancelBtn.addEventListener('click', () => {
   modal.style.display = 'none';
 });
+closeModalIcon.addEventListener('click',()=>{
+  modal.style.display = 'none';
+})
 
 // Save form
 editForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const newTitle = document.getElementById('title').value;
   const newOrg = document.getElementById('organization').value;
+  const newYear = document.getElementById('year').value;
+  const newUrl = document.getElementById('certification-url').value;
+
+  
 
   if (currentCard) {
     currentCard.querySelector('.certification-title').textContent = newTitle;
-    currentCard.querySelector('p').textContent = newOrg;
+    currentCard.querySelector('.certificate-organization').textContent = newOrg;
+    currentCard.querySelector('.certificate-year').textContent= newYear;
+    currentCard.querySelector('.certificate-url').href = newUrl;
   }
 
-  modal.style.display = 'none';  
+  modal.style.display = 'none'; 
+    toggleCertificate(currentCard,false)
 });
 
 // Close modal when clicking outside
@@ -160,3 +235,4 @@ window.addEventListener('click', (e) => {
     modal.style.display = 'none';
   }
 });
+
