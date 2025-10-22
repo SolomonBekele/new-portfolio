@@ -697,24 +697,56 @@ html{
     /* 8px / 16px =50% */
     font-size: 50%;
 }
-.header .header-container .name-role{
-    gap: 0.4rem;
+.header {
+   display: none;
+   background: transparent;
+   position: absolute;
+   top: 5rem;
+   right: 2rem;
 }
-.header .header-container{
-    padding: 1.8rem 7rem;
+.header .header-container .name-role {
+    display: none;
 }
 .main{
-    margin-top: 9.4rem;
+   margin-top: 0rem;
+    flex-direction: column;
+    height: auto;
+    
 }
 .side{
-    width: 28%;
+    width: 100%;
 }
 .side-container{
-    margin:1.2rem  ;
+    margin:1.4rem  ;
 }
-.right-side-container{
-    max-width: 88%;
-    margin:2.8rem auto;
+.side .side-container .menu-icon {
+    display: block; 
+  }
+
+.side .quick-info .quick-info-container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.side .side-container .link-list{
+    grid-template-columns: repeat(2,1fr);
+}
+.header.active {
+    display: flex;
+    justify-content: flex-end; 
+ }
+.header .header-container .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+  }
+.quick-info-container ul {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
 }
 
 .projects .project-cards,
