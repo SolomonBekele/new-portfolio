@@ -694,8 +694,8 @@ footer{
 /* 912px / 16px = 57rem */
 /* 57rem * 16px = 912px */
 html{
-    /* 8px / 16px =50% */
-    font-size: 50%;
+    /* 8.5px / 16px =53.125% */
+    font-size: 53.125%;
 }
 .header {
    display: none;
@@ -717,7 +717,8 @@ html{
     width: 100%;
 }
 .side-container{
-    margin:1.4rem  ;
+    max-width: 85%;
+    margin:1.4rem auto  ;
 }
 .side .side-container .menu-icon {
     display: block; 
@@ -781,8 +782,8 @@ footer{
 /* 672px / 16px = 42rem */
 /* 42rem * 16px = 672px */
 html{
-    /* 7px / 16px =43.75% */
-    font-size: 43.75%;
+    /* 8px / 16px =50% */
+    font-size: 50%;
 }
 .header {
    display: none;
@@ -803,9 +804,7 @@ html{
 .side{
     width: 100%;
 }
-.side-container{
-    margin:1.4rem  ;
-}
+
 .side .side-container .menu-icon {
     display: block; 
   }
@@ -852,8 +851,8 @@ footer{
 /* 560px / 16px = 42rem */
 /* 35rem * 16px = 560px */
 html{
-    /* 6px / 16px =43.75% */
-    font-size: 37.5%;
+    /* 7.5px / 16px =46.875% */
+    font-size: 37.875%;
 }
 .header {
    display: none;
@@ -873,9 +872,6 @@ html{
 .side{
     width: 100%;
 
-}
-.side-container{
-    margin:1.4rem  ;
 }
 .side .side-container .menu-icon {
     display: block; 
