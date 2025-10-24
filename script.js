@@ -236,3 +236,27 @@ window.addEventListener('click', (e) => {
   }
 });
 
+
+// _______theme
+const toggleBtn = document.getElementById('themeToggle');
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    
+    // Toggle theme
+    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    
+    // Change icon
+    toggleBtn.textContent = isDark ? '🌙' : '☀️';
+    
+    // Optional: Save preference
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  });
+
+  // Load saved theme on page load
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  }
+
