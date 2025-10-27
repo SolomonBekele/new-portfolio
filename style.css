@@ -9,9 +9,9 @@
     /* Color variables */
 
   /* Primary colors */
-  --color-primary: #3498db;    /* Main brand color */
-  --color-secondary: #2ecc71;  /* Accent color */
-  --color-accent: #e67e22;     /* Highlight buttons, links */
+  --color-primary: #3498db;    
+  --color-secondary: #2ecc71;  
+  --color-accent: #e67e22;     
   --color-text: #ffffff;
 
   /* Backgrounds */
@@ -185,12 +185,12 @@ header .header-container .nav-list .theme-button:hover{
   cursor: pointer;
   z-index: 3;
 }
-.side .side-container .profile{
+.side .side-container .hero{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.profile .profile-icon{
+.hero .profile-icon{
     background-color: var(--bg-profile);
     width: 15rem;
     height: 15rem;
@@ -200,17 +200,17 @@ header .header-container .nav-list .theme-button:hover{
     justify-content: center;
     margin: 2rem 0;
 }
-.profile .profile-icon .profile-pic{
+.hero .profile-icon .profile-pic{
     width: 13rem;
     height: 13rem;
     border-radius: 50%;   
 }
-.profile .name ,
-.profile .profession{
+.hero .name ,
+.hero .profession{
     font-weight: 200;
     font-size: 1.8rem;
 }
-.profile .profession{
+.hero .profession{
     color: var(--text-profession);
 }
 .side .quick-info{
@@ -880,16 +880,6 @@ html{
     /* 8px / 16px =50% */
     font-size: 50%;
 }
-.header {
-   display: none;
-   background: transparent;
-   position: absolute;
-   top: 5rem;
-   right: 2rem;
-}
-.header .header-container .name-role-container {
-    display: none;
-}
 .main{
    margin-top: 0rem;
     flex-direction: column;
@@ -911,16 +901,6 @@ html{
 .side .side-container .link-list{
     grid-template-columns: repeat(2,1fr);
 }
-.header.active {
-    display: flex;
-    justify-content: flex-end; 
- }
-.header .header-container .nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    list-style: none;
-  }
 .quick-info-container ul {
     margin: 1rem 0;
     display: flex;
@@ -948,16 +928,6 @@ html{
     /* 7.5px / 16px =46.875% */
     font-size: 37.875%;
 }
-.header {
-   display: none;
-   background: transparent;
-   position: absolute;
-   top: 5rem;
-   right: 2rem;
-}
-.header .header-container .name-role-container {
-    display: none;
-}
 .main{
     margin-top: 0rem;
     flex-direction: column;
@@ -979,16 +949,6 @@ html{
 .side .side-container .link-list{
     grid-template-columns: repeat(2,1fr);
 }
-.header.active {
-    display: flex;
-    justify-content: flex-end; 
- }
-.header .header-container .nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    list-style: none;
-  }
 .quick-info-container ul {
     margin: 1rem 0;
     display: flex;
@@ -1005,7 +965,6 @@ html{
     overflow-y:hidden;
     /* flex: 1; */
 }
-
 
 .projects .project-cards,
 .certifications .certification-cards{

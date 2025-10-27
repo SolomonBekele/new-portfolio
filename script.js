@@ -1,7 +1,12 @@
+//--------------- add/remove a toggle for a menu icon -------------
+
 document.querySelector('.menu-icon').addEventListener('click', () => {
     // Toggle 'active' class on header
     document.querySelector('header').classList.toggle('active');
 });
+
+
+// ------------upload a video ------------
 
 const uploadContainer = document.getElementById('uploadVideoContainer');
 let videoInput = document.getElementById('videoInput');
@@ -23,7 +28,7 @@ function handleFileSelection(file) {
   const video = document.createElement('video');
   video.controls = true;
   video.autoplay = false;
-  video.preload = 'metadata';      // load only metadata until play
+  video.preload = 'none';      // load only metadata until play
   video.src = URL.createObjectURL(file);
   video.classList.add('uploaded-video');
 
@@ -87,13 +92,16 @@ videoInput.addEventListener('change', (e) => {
   handleFileSelection(e.target.files[0]);
 });
 
+// ----------------------toggle  certification button --------------------
+
 // Function that handles certificate toggling for a given card
 function toggleCertificate(card,event) {
+   const text = card.querySelector('.certificateText');
+    const chevron = card.querySelector('.chevron');
+
     const content = card.querySelector('.certificate-content');
     const iframeWrapper = card.querySelector('.iframeWrapper');
     const iframeFallback = card.querySelector('.iframeFallback');
-    const text = card.querySelector('.certificateText');
-    const chevron = card.querySelector('.chevron');
     const url = card.querySelector('.openLink').href;
 
     const isHidden = content.style.display === 'none' || content.style.display === '' 
@@ -218,7 +226,8 @@ window.addEventListener('click', (e) => {
 });
 
 
-// _______theme
+
+// ---------------- theme -------------------
 const toggleBtn = document.getElementById('themeToggle');
 
   toggleBtn.addEventListener('click', () => {
