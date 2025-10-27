@@ -127,16 +127,16 @@ body{
     justify-content: space-between;
     
 }
-.header .header-container .name-role{
+.header .header-container .name-role-container{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.header .header-container .name-role .name{
+.header .header-container .name-role-container .name{
     font-size: 3rem;
     font-weight: 400;
 }
-.header .header-container .name-role .role{
+.header .header-container .name-role-container .role{
     font-size: 1.7rem;
     font-weight: 400;
     color: var(--text-role);
@@ -710,7 +710,7 @@ header .header-container .nav-list .theme-button:hover{
 footer{
     padding: 2.5rem 10rem;
     background-color: var(--bg-footer);
-    color: var(--text-primary); 
+    color: var(--color-text); 
 }
 footer .name{
 font-weight: 400;
@@ -732,7 +732,7 @@ html{
     /* 9px / 16px =56.25% */
     font-size: 56.25%;
 }
-.header .header-container .name-role{
+.header .header-container .name-role-container{
     gap: 0.5rem;
 }
 .header .header-container{
@@ -799,7 +799,7 @@ html{
    top: 5rem;
    right: 2rem;
 }
-.header .header-container .name-role {
+.header .header-container .name-role-container {
     display: none;
 }
 .main{
@@ -887,7 +887,7 @@ html{
    top: 5rem;
    right: 2rem;
 }
-.header .header-container .name-role {
+.header .header-container .name-role-container {
     display: none;
 }
 .main{
@@ -955,7 +955,7 @@ html{
    top: 5rem;
    right: 2rem;
 }
-.header .header-container .name-role {
+.header .header-container .name-role-container {
     display: none;
 }
 .main{
@@ -1026,9 +1026,5 @@ html{
 .certifications .certification-cards .certification-card .certification-title,
 .certifications .certification-cards .certification-card p{
     margin-bottom: 0.7rem;
-
-}
-footer{
-    padding: 1.8rem 7rem; 
 }
 }
