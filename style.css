@@ -728,58 +728,58 @@ footer .description{
 @media (max-width: 72rem) {
 /* 1150px / 16px = 72rem */
 /* 72rem * 16px = 1152px */
-html{
-    /* 9px / 16px =56.25% */
-    font-size: 56.25%;
-}
-.header .header-container .name-role-container{
-    gap: 0.5rem;
-}
-.header .header-container{
-    padding: 2rem 8rem;
-}
-.main{
-    margin-top: 10.1rem;
-    height: calc(100vh - 10rem);
-}
-.side-container{
-    margin:2rem  ;
-}
-.side .quick-info .quick-info-container{
-    padding: 1rem;
-}
-.right-side-container{
-    max-width: 85%;
-    margin:3rem auto;
-}
+    html{
+        /* 9px / 16px =56.25% */
+        font-size: 56.25%;
+    }
+    .header .header-container .name-role-container{
+        gap: 0.5rem;
+    }
+    .header .header-container{
+        padding: 2rem 8rem;
+    }
+    .main{
+        margin-top: 10.1rem;
+        height: calc(100vh - 10rem);
+    }
+    .side-container{
+        margin:2rem  ;
+    }
+    .side .quick-info .quick-info-container{
+        padding: 1rem;
+    }
+    .right-side-container{
+        max-width: 85%;
+        margin:3rem auto;
+    }
 
-.projects .project-cards,
-.certifications .certification-cards{
-    gap:3rem;
-    
-}
-.right-side .about-me-detail,
-.right-side .experience .experience-detail,
-.right-side .education .education-detail{
-    padding: 3rem;
-}
-.projects .project-cards .project-card,
-.certifications .certification-cards .certification-card{
-    padding: 3rem;
-}
-.projects .project-cards .project-card,
-.certifications .certification-cards .certification-card{
-    padding: 2.5rem
-}
-.certifications .certification-cards .certification-card .certification-title,
-.certifications .certification-cards .certification-card p{
-    margin-bottom: 1rem;
+    .projects .project-cards,
+    .certifications .certification-cards{
+        gap:3rem;
+        
+    }
+    .right-side .about-me-detail,
+    .right-side .experience .experience-detail,
+    .right-side .education .education-detail{
+        padding: 3rem;
+    }
+    .projects .project-cards .project-card,
+    .certifications .certification-cards .certification-card{
+        padding: 3rem;
+    }
+    .projects .project-cards .project-card,
+    .certifications .certification-cards .certification-card{
+        padding: 2.5rem
+    }
+    .certifications .certification-cards .certification-card .certification-title,
+    .certifications .certification-cards .certification-card p{
+        margin-bottom: 1rem;
 
-}
+    }
 
-footer{
-    padding: 2rem 8rem; 
-}
+    footer{
+        padding: 2rem 8rem; 
+    }
 }
 
 
