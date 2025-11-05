@@ -312,3 +312,24 @@ const toggleBtn = document.getElementById('themeToggle');
       newNavItem.textContent = `Section ${sectionCount}`;
       sideNavLinlList.appendChild(newNavItem);
     });
+
+
+    
+    //------------- fetch git hub detail info
+
+let github_username = 'SolomonBekele';
+
+async function getGitHubUser() {
+  const github_response = await fetch(`https://api.github.com/users/${github_username}`);
+  const github = await github_response.json();
+
+  
+  // Inject the data into the HTML
+  document.querySelector('.github-name').textContent = github.name;
+  document.querySelector(".github-bio").textContent = `${github.bio}`;
+  document.querySelector('.github-repos').textContent =`${github.public_repos} repositories`;
+  document.querySelector('.github-created-at').textContent =`created at ${github.created_at}`
+
+}
+getGitHubUser();
+
