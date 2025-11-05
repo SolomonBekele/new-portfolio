@@ -266,7 +266,8 @@ header .header-container .nav-list .theme-button:hover{
 .right-side .experience,
 .right-side .education,
 .right-side .projects,
-.right-side .certifications{
+.right-side .certifications,
+.right-side .github{
     margin-bottom: 5rem;
     /* scroll-margin-top: 1500px; */
 }
@@ -275,7 +276,8 @@ header .header-container .nav-list .theme-button:hover{
 .right-side .experience .experience-title,
 .right-side .education .education-title,
 .right-side .projects .project-title,
-.certifications-title{
+.right-side .certifications-title,
+.right-side .github-title{
     font-weight: 400;
     color: var(--text-main-title);
     font-size: 1.8rem;
@@ -287,7 +289,8 @@ header .header-container .nav-list .theme-button:hover{
 .right-side .about-me-detail,
 .right-side .intro-video-detail,
 .right-side .experience .experience-detail,
-.right-side .education .education-detail{
+.right-side .education .education-detail,
+.right-side .github-detail{
     display: flex;
     flex-direction: column;
     gap:1rem;
