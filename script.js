@@ -154,6 +154,18 @@ document.querySelectorAll('.toggleCertificateBtn').forEach(button => {
 });
 
 
+// ----hide expiry if it is empity
+
+const expiryContainers = document.querySelectorAll('.certificate-expiry');
+expiryContainers.forEach((expiryContainer) => {
+  if (!expiryContainer.querySelector('span').textContent.trim()) {
+    expiryContainer.style.display = 'none';
+} else {
+  expiryContainer.style.display = 'block';
+}
+  });
+
+
 
 
 // _____________------------ add a edit modal-----------
@@ -163,6 +175,9 @@ const modal = document.getElementById('editModal');
 const cancelBtn = document.getElementById('cancelBtn');
 const closeModalIcon = document.getElementById('closeModalIcon');
 const editForm = document.getElementById('editForm');
+
+let currentShadow = null;
+
 let currentCard = null;
 
 clickedToggleCard= null
@@ -172,14 +187,22 @@ editIcons.forEach(icon => {
     const title = card.querySelector('.certification-title').textContent;
     const organization = card.querySelector('.certificate-organization').textContent;
     const year = card.querySelector('.certificate-year').textContent;
-    const url = document.querySelector('.openLink').href;
+    const url = card.querySelector('.openLink').href;
+    const expiryDate = card.querySelector('.certificate-expiry > span')?.textContent || null;
+
+    const datePicker = document.querySelector("date-picker");
+    const shadow = datePicker.shadowRoot; 
+   
 
     document.getElementById('title').value = title;
     document.getElementById('organization').value = organization;
     document.getElementById('year').value=year;
     document.getElementById('certification-url').value= url;
+    shadow.getElementById('date-input').value = expiryDate || "";
+
     
-    currentCard = card;
+    currentCard = card; 
+    currentShadow = shadow;
     modal.style.display = 'flex';
      
     // 🔥 Automatically focus on title input
@@ -204,6 +227,7 @@ editForm.addEventListener('submit', (e) => {
   const newOrg = document.getElementById('organization').value;
   const newYear = document.getElementById('year').value;
   const newUrl = document.getElementById('certification-url').value;
+  const newExpiry = currentShadow.getElementById('date-input').value;
 
   
 
@@ -212,6 +236,10 @@ editForm.addEventListener('submit', (e) => {
     currentCard.querySelector('.certificate-organization').textContent = newOrg;
     currentCard.querySelector('.certificate-year').textContent= newYear;
     currentCard.querySelector('.certificate-url').href = newUrl;
+    currentCard.querySelector('.certificate-expiry > span').textContent=newExpiry;
+  }
+  if(newExpiry){
+     currentCard.querySelector('.certificate-expiry').style.display = 'block';
   }
 
   modal.style.display = 'none'; 
@@ -250,3 +278,37 @@ const toggleBtn = document.getElementById('themeToggle');
     toggleBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
   }
 
+
+
+  // __________________________ add section?
+
+
+
+    const addSectionBtn = document.getElementById("addSectionBtn");
+    const sideNavLinlList = document.querySelector(".link-list");
+    const rightSideContainer = document.querySelector(".right-side-container");
+    const addSectionContainer = document.querySelector(".add-section-container");
+
+
+    let sectionCount = 3;
+
+    addSectionBtn.addEventListener("click", () => {
+      const event = new CustomEvent("sectionAdded");
+      document.dispatchEvent(event);
+    });
+
+    document.addEventListener("sectionAdded", () => {
+      sectionCount++;
+
+      const newSection = document.createElement("section");
+      newSection.innerHTML = `
+        <h2>Section ${sectionCount}</h2>
+        <p>This is dynamically added section number ${sectionCount}.</p>
+      `;
+
+     rightSideContainer.insertBefore(newSection, addSectionContainer);
+
+      const newNavItem = document.createElement("li");
+      newNavItem.textContent = `Section ${sectionCount}`;
+      sideNavLinlList.appendChild(newNavItem);
+    });

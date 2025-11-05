@@ -106,6 +106,7 @@
 }
 html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 body{
     font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
@@ -165,7 +166,6 @@ header .header-container .nav-list .theme-button:hover{
     margin-top: 11.5rem;
     display: flex;
     height: calc(100vh - 11.5rem);
-
 }
 .side{
     width: clamp(200px,25vw,480px);
@@ -268,6 +268,7 @@ header .header-container .nav-list .theme-button:hover{
 .right-side .projects,
 .right-side .certifications{
     margin-bottom: 5rem;
+    /* scroll-margin-top: 1500px; */
 }
 .right-side .about-me .about-me-title,
 .right-side .intro-video .intro-video-title,
@@ -706,6 +707,20 @@ header .header-container .nav-list .theme-button:hover{
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+.right-side .add-section-container{
+    display: flex;
+    justify-content: end;
+}
+.right-side .addSectionBtn{
+   font-size: 1.5rem;
+   background: transparent;
+   padding: 0.5rem;
+   border-radius: 0.5rem;
+   color: var(--text-primary);
+   background-color: var(--bg-card);
+   border: 1px solid var(--border-color-main);
+   margin-bottom: 2rem;
 }
 footer{
     padding: 2.5rem 10rem;
