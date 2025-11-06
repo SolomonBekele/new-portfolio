@@ -1,3 +1,4 @@
+import { notify } from "./additionalJs/notification.js";
 //--------------- add/remove a toggle for a menu icon -------------
 
 document.querySelector('.menu-icon').addEventListener('click', () => {
@@ -70,7 +71,9 @@ function handleFileSelection(file) {
     videoInput = document.getElementById('videoInput');
 
     chooseVideoButton.addEventListener('click', () => videoInput.click());
-    videoInput.addEventListener('change', (e) => handleFileSelection(e.target.files[0]), { once: true });
+    videoInput.addEventListener('change', (e) => {
+      handleFileSelection(e.target.files[0]), { once: true }
+    });
   });
 
   // Handle replace button click
@@ -85,6 +88,7 @@ function handleFileSelection(file) {
   uploadContainer.appendChild(fileButtonDiv);
   uploadContainer.appendChild(video);
   uploadContainer.appendChild(replaceButton);
+  notify()
 }
 
 // Initial binding
@@ -180,7 +184,7 @@ let currentShadow = null;
 
 let currentCard = null;
 
-clickedToggleCard= null
+let clickedToggleCard= null
 editIcons.forEach(icon => {
   icon.addEventListener('click', (e) => {
     const card = e.target.closest('.certification-card');
