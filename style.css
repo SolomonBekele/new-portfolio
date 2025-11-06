@@ -263,13 +263,30 @@ header .header-container .nav-list .theme-button:hover{
     margin:4rem auto;
 }
 .right-side .about-me,
+.right-side .intro-video,
 .right-side .experience,
 .right-side .education,
 .right-side .projects,
 .right-side .certifications,
 .right-side .github{
     margin-bottom: 5rem;
-    /* scroll-margin-top: 1500px; */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 1s, opacity 1s;
+   
+}
+.right-side .about-me.observer,
+.right-side .intro-video.observer,
+.right-side .experience.observer,
+.right-side .education.observer,
+.right-side .projects.observer,
+.right-side .certifications.observer,
+.right-side .github.observer{
+    opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+   
 }
 .right-side .about-me .about-me-title,
 .right-side .intro-video .intro-video-title,
